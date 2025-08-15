@@ -22,4 +22,8 @@ Run the project:
 
 > npm run dev
 
+## Step 4:
+
+Deliverables: All the Postman collections inside the directory called "postman-collections". Which is in root directory.
+
 Thank you

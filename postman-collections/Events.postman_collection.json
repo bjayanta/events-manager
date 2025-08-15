@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "40fd166d-4582-4959-8b42-c78bf8032876",
+		"name": "Events",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26060948"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Daily Standup Meeting 3\",\r\n  \"description\": \"Team daily scrum meeting\",\r\n  \"startTime\": \"2025-08-15T09:00:00Z\",\r\n  \"endTime\": \"2025-08-15T09:15:00Z\",\r\n  \"participants\": [\"john.doe@example.com\", \"bsagor.neo@gmail.com\"],\r\n  \"recurrence\": {\r\n    \"type\": \"daily\",\r\n    \"interval\": 1,\r\n    \"until\": \"2025-12-01T23:59:59Z\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/events",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Daily Standup Meeting 1\",\r\n  \"description\": \"Team daily scrum meeting\",\r\n  \"startTime\": \"2023-11-20T09:00:00Z\",\r\n  \"endTime\": \"2023-11-20T09:15:00Z\",\r\n  \"participants\": [\"john.doe@example.com\", \"jane.doe@example.com\"],\r\n  \"recurrence\": {\r\n    \"type\": \"daily\",\r\n    \"interval\": 1,\r\n    \"until\": \"2023-12-01T23:59:59Z\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-smi04aRH7AMG0mgBb8rAWXbIhtg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 18:59:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No token provided, authorization denied\"\n}"
+				},
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Daily Standup Meeting 2\",\r\n  \"description\": \"Team daily scrum meeting\",\r\n  \"startTime\": \"2023-11-20T09:00:00Z\",\r\n  \"endTime\": \"2023-11-20T09:15:00Z\",\r\n  \"participants\": [\"john.doe@example.com\", \"jane.doe@example.com\"],\r\n  \"recurrence\": {\r\n    \"type\": \"daily\",\r\n    \"interval\": 1,\r\n    \"until\": \"2023-12-01T23:59:59Z\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "509"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1fd-vOg42SB1bkq20a3WZkSitVj8LpE\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:14:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Event created successfully\",\n    \"event\": {\n        \"title\": \"Daily Standup Meeting 2\",\n        \"description\": \"Team daily scrum meeting\",\n        \"startTime\": \"2023-11-20T09:00:00.000Z\",\n        \"endTime\": \"2023-11-20T09:15:00.000Z\",\n        \"creator\": \"689f7a871cd677f2dccd845c\",\n        \"participants\": [\n            \"john.doe@example.com\",\n            \"jane.doe@example.com\"\n        ],\n        \"recurrence\": {\n            \"type\": \"daily\",\n            \"interval\": 1,\n            \"until\": \"2023-12-01T23:59:59.000Z\"\n        },\n        \"seriesId\": \"2db62f84-c25d-4d27-9efc-8bc070b68e83\",\n        \"_id\": \"689f87132e4ce95735b5a1e4\",\n        \"createdAt\": \"2025-08-15T19:14:27.973Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"title\": \"Daily Standup Meeting - Updated\",\r\n//   \"participants\": [\"jayanta@example.com\"],\r\n//   \"updateScope\": \"thisEvent\"\r\n// }\r\n\r\n// {\r\n//   \"title\": \"Daily Standup Meeting - All Future\",\r\n//   \"participants\": [\"jayanta@example.com\", \"robin@example.com\"],\r\n//   \"updateScope\": \"thisAndFollowing\"\r\n// }\r\n\r\n{\r\n  \"title\": \"Daily Standup Meeting - All Series\",\r\n  \"participants\": [\"jayanta@example.com\", \"robin@example.com\", \"sagor@example.com\"],\r\n  \"updateScope\": \"allEvents\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/events/689f84f2f42115723a032ed0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"events",
+						"689f84f2f42115723a032ed0"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Daily Standup Meeting edit\",\r\n  \"description\": \"Team daily scrum meeting\",\r\n  \"startTime\": \"2023-11-20T09:00:00Z\",\r\n  \"endTime\": \"2023-11-20T09:15:00Z\",\r\n  \"participants\": [\"john.doe@example.com\", \"jane.doe@example.com\", \"robin@gmail.com\"],\r\n  \"recurrence\": {\r\n    \"type\": \"daily\",\r\n    \"interval\": 1,\r\n    \"until\": \"2023-12-01T23:59:59Z\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/2db62f84-c25d-4d27-9efc-8bc070b68e83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"2db62f84-c25d-4d27-9efc-8bc070b68e83"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-iH+yHhOFADnmfL3LVhbFdwGK1fM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:12:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Event not found.\"\n}"
+				},
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"title\": \"Daily Standup Meeting - Updated\",\r\n//   \"participants\": [\"jayanta@example.com\"],\r\n//   \"updateScope\": \"thisEvent\"\r\n// }\r\n\r\n// {\r\n//   \"title\": \"Daily Standup Meeting - All Future\",\r\n//   \"participants\": [\"jayanta@example.com\", \"robin@example.com\"],\r\n//   \"updateScope\": \"thisAndFollowing\"\r\n// }\r\n\r\n{\r\n  \"title\": \"Daily Standup Meeting - All Series\",\r\n  \"participants\": [\"jayanta@example.com\", \"robin@example.com\", \"sagor@example.com\"],\r\n  \"updateScope\": \"allEvents\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/689f84f2f42115723a032ed0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"689f84f2f42115723a032ed0"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-WIb9h7TUIJ1OFJVj5eLKwNCkMLY\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:25:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"All events in the series updated successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"deleteScope\": \"thisEvent\"\r\n// }\r\n\r\n{\r\n  \"deleteScope\": \"thisAndFollowing\"\r\n}\r\n\r\n// {\r\n//   \"deleteScope\": \"allEvents\"\r\n// }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/events/689f87132e4ce95735b5a1e4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"events",
+						"689f87132e4ce95735b5a1e4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"title\": \"Daily Standup Meeting - Updated\",\r\n//   \"participants\": [\"jayanta@example.com\"],\r\n//   \"updateScope\": \"thisEvent\"\r\n// }\r\n\r\n// {\r\n//   \"title\": \"Daily Standup Meeting - All Future\",\r\n//   \"participants\": [\"jayanta@example.com\", \"robin@example.com\"],\r\n//   \"updateScope\": \"thisAndFollowing\"\r\n// }\r\n\r\n{\r\n  \"title\": \"Daily Standup Meeting - All Series\",\r\n  \"participants\": [\"jayanta@example.com\", \"robin@example.com\", \"sagor@example.com\"],\r\n  \"updateScope\": \"allEvents\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/689f84f2f42115723a032ed0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"689f84f2f42115723a032ed0"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"35-smi04aRH7AMG0mgBb8rAWXbIhtg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:33:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No token provided, authorization denied\"\n}"
+				},
+				{
+					"name": "404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"deleteScope\": \"thisEvent\"\r\n// }\r\n\r\n{\r\n  \"deleteScope\": \"thisAndFollowing\"\r\n}\r\n\r\n// {\r\n//   \"deleteScope\": \"allEvents\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/689f84f2f42115723a032ed0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"689f84f2f42115723a032ed0"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1e-iH+yHhOFADnmfL3LVhbFdwGK1fM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:34:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Event not found.\"\n}"
+				},
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//   \"deleteScope\": \"thisEvent\"\r\n// }\r\n\r\n{\r\n  \"deleteScope\": \"thisAndFollowing\"\r\n}\r\n\r\n// {\r\n//   \"deleteScope\": \"allEvents\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/events/689f87132e4ce95735b5a1e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"689f87132e4ce95735b5a1e4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-C0zCeWH2AieCHa235T9HZc/bHfk\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:35:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"This event and all following events deleted successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "My Events",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/events/myevents",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"events",
+						"myevents"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/events/myevents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"myevents"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3c-SrMmWtr6GBvLrmVtTSbwIK0ugP0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 19:52:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid token format. Expected: Bearer <token>\"\n}"
+				},
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/events/myevents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"events",
+								"myevents"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1973"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b5-dhtcdiqAo3MI9W4mfoxc06CkuJg\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 15 Aug 2025 20:30:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Events retrieved successfully\",\n    \"events\": [\n        {\n            \"_id\": \"689f8f8940c39f9273524230\",\n            \"title\": \"Daily Standup Meeting 1\",\n            \"description\": \"Team daily scrum meeting\",\n            \"startTime\": \"2025-08-15T09:00:00.000Z\",\n            \"endTime\": \"2025-08-15T09:15:00.000Z\",\n            \"creator\": \"689f7d2c672c63be926b3e21\",\n            \"participants\": [\n                \"john.doe@example.com\",\n                \"bjayanta.neo@gmail.com\",\n                \"bsagor.neo@gmail.com\"\n            ],\n            \"recurrence\": {\n                \"type\": \"daily\",\n                \"interval\": 1,\n                \"until\": \"2025-12-01T23:59:59.000Z\"\n            },\n            \"seriesId\": \"0ae6cf8d-7867-49af-a73e-744863ea2ac8\",\n            \"createdAt\": \"2025-08-15T19:50:33.579Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"689f8f9f40c39f9273524234\",\n            \"title\": \"Daily Standup Meeting 3\",\n            \"description\": \"Team daily scrum meeting\",\n            \"startTime\": \"2025-08-15T09:00:00.000Z\",\n            \"endTime\": \"2025-08-15T09:15:00.000Z\",\n            \"creator\": \"689f7d2c672c63be926b3e21\",\n            \"participants\": [\n                \"john.doe@example.com\",\n                \"bjayanta.neo@gmail.com\",\n                \"bsagor.neo@gmail.com\"\n            ],\n            \"recurrence\": {\n                \"type\": \"daily\",\n                \"interval\": 1,\n                \"until\": \"2025-12-01T23:59:59.000Z\"\n            },\n            \"seriesId\": \"f7c541d2-aee9-49e6-a4b9-98eaadea5504\",\n            \"createdAt\": \"2025-08-15T19:50:55.900Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"689f8fa940c39f9273524238\",\n            \"title\": \"Daily Standup Meeting 5\",\n            \"description\": \"Team daily scrum meeting\",\n            \"startTime\": \"2025-08-15T09:00:00.000Z\",\n            \"endTime\": \"2025-08-15T09:15:00.000Z\",\n            \"creator\": \"689f7d2c672c63be926b3e21\",\n            \"participants\": [\n                \"john.doe@example.com\",\n                \"bjayanta.neo@gmail.com\",\n                \"bsagor.neo@gmail.com\"\n            ],\n            \"recurrence\": {\n                \"type\": \"daily\",\n                \"interval\": 1,\n                \"until\": \"2025-12-01T23:59:59.000Z\"\n            },\n            \"seriesId\": \"14e48516-6145-485e-91f3-2b43ebb6b6dc\",\n            \"createdAt\": \"2025-08-15T19:51:05.664Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"689f906c40c39f927352423c\",\n            \"title\": \"Daily Standup Meeting 6\",\n            \"description\": \"Team daily scrum meeting\",\n            \"startTime\": \"2025-08-15T09:00:00.000Z\",\n            \"endTime\": \"2025-08-15T09:15:00.000Z\",\n            \"creator\": \"689f7a871cd677f2dccd845c\",\n            \"participants\": [\n                \"john.doe@example.com\",\n                \"bsagor.neo@gmail.com\"\n            ],\n            \"recurrence\": {\n                \"type\": \"daily\",\n                \"interval\": 1,\n                \"until\": \"2025-12-01T23:59:59.000Z\"\n            },\n            \"seriesId\": \"3f69128b-7cf2-43d3-ba1f-d5baf1aaafea\",\n            \"createdAt\": \"2025-08-15T19:54:20.464Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
