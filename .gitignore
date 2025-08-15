@@ -1,0 +1,46 @@
+# Node.js
+node_modules/
+.env
+
+# npm
+npm-debug.log*
+.npm/
+
+# Logs
+logs/
+*.log
+
+# Production
+build/
+dist/
+public/build/
+public/dist/
+
+# Development
+.vscode/
+.idea/
+.DS_Store
+
+# macOS
+.DS_Store
+.Trashes
+*.iml
+
+# Yarn
+yarn-debug.log*
+.yarn/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# Thumbnails and system files
+ehthumbs.db
+Thumbs.db
+
+# Other
+temp/
+tmp/
